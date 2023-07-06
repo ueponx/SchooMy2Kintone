@@ -35,9 +35,9 @@ function myFunction() {
 //------------------
 // Kintone用のコード群
 //------------------
-const KINTONE_URL = 'https://lap4bd2zpv8f.cybozu.com';
-const APP_ID = 1;
-const APP_API_TOKEN = 'FCErerxNbJMb9paUuTxBJHICtWZmtOZEDEMQWV2Y';
+const KINTONE_URL = 'https://yfwrse5l4o1g.cybozu.com';
+const APP_ID = 3;
+const APP_API_TOKEN = 'zKGkNEuGhaDKP8LE6YOjSmlUoXYu1yuoaSyuNCso';
 
 const getKintoneRecord = (app, appApiToken, id) => {
   const apiResponse =  UrlFetchApp.fetch(`${KINTONE_URL}/k/v1/record.json?app=${app}&id=${id}`, {
@@ -65,16 +65,16 @@ const postKintoneRecord = (app, appApiToken, record) => {
 function postKintoneRecordWithParam(date, time, temp, rh){
   let response = postKintoneRecord(APP_ID, APP_API_TOKEN,
   {
-    "日付": {
+    "date": {
       "value": date
     },
-    "時刻": {
+    "time": {
       "value": time
     },
-    "温度": {
+    "temp": {
       "value": temp
     },
-    "湿度": {
+    "humi": {
       "value": rh
     },
   });
